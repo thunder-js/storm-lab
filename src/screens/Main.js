@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, Button, AsyncStorage } from 'react-native'
 import { withApollo } from 'react-apollo'
-import { loadAuthScreen, loadOnboardingScreen } from '../../navigation'
-import ScreenWrapper from '../../lib/storm-common/src/components/ScreenWrapper'
-import withIsAuthenticated from '../../lib/storm-auth/src/hocs/graphcool/with-is-authenticated'
-import logout from '../../lib/storm-auth/src/logic/logout'
+import { loadAuthScreen, loadOnboardingScreen } from '../navigation'
+import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
+import withIsAuthenticated from 'storm-auth/src/hocs/graphcool/with-is-authenticated'
+import logout from 'storm-auth/src/logic/logout'
 
 class Main extends React.Component {
   static navigatorStyle = {
@@ -39,7 +39,7 @@ class Main extends React.Component {
       color="#F00"
       onPress={this.handleLogin}
     />
-    
+
     return (
       <ScreenWrapper style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>Main!</Text>

@@ -1,7 +1,7 @@
 import React from 'react';
-import ScreenWrapper from '../../lib/storm-common/src/components/ScreenWrapper'
-import Onboarding from '../../lib/storm-onboarding/src/Onboarding'
-import Config from '@foundation/config'
+import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
+import Onboarding from 'storm-onboarding/src/Onboarding'
+import Config from '../config'
 
 const PAGES = [{
   text: 'Texto1',
@@ -15,7 +15,7 @@ const PAGES = [{
 }]
 const LOGO = { uri: 'https://unsplash.it/300x400' }
 
-class Onboarding extends React.Component {
+class OnboardingScreen extends React.Component {
   static navigatorStyle = {
     navBarHidden: true,
   }

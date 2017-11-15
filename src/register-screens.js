@@ -15,10 +15,10 @@ import OnboardingScreen from './screens/Onboarding'
 import WaypointScreen from './screens/Waypoint'
 
 export default ({ reduxStore, apolloClient }) => {
-  Navigation.registerComponent(ONBOARDING_SCREEN, () => OnboardingScreen, store, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(AUTH_SCREEN, () => AuthScreen, store, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(WAYPOINT_SCREEN, () => WaypointScreen, store, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(MAIN_SCREEN, () => MainScreen, store, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(FIRST_TAB_SCREEN, () => MainScreen, store, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(SECOND_TAB_SCREEN, () => MainScreen, store, ApolloProvider, { client: apolloClient });
+  Navigation.registerComponent(ONBOARDING_SCREEN, () => OnboardingScreen, reduxStore, ApolloProvider, { client: apolloClient });
+  Navigation.registerComponent(AUTH_SCREEN, () => AuthScreen, reduxStore, ApolloProvider, { client: apolloClient });
+  Navigation.registerComponent(WAYPOINT_SCREEN, () => WaypointScreen, reduxStore, ApolloProvider, { client: apolloClient });
+  Navigation.registerComponent(MAIN_SCREEN, () => MainScreen, reduxStore, ApolloProvider, { client: apolloClient });
+  Navigation.registerComponent(FIRST_TAB_SCREEN, () => MainScreen, reduxStore, ApolloProvider, { client: apolloClient });
+  Navigation.registerComponent(SECOND_TAB_SCREEN, () => MainScreen, reduxStore, ApolloProvider, { client: apolloClient });
 };

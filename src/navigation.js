@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation'
-const PK_NAME = 'br.com.tastefy'
+const PKG_NAME = 'br.com.tastefy'
 
 export const AUTH_SCREEN = `${PKG_NAME}.Auth`
 export const ONBOARDING_SCREEN = `${PKG_NAME}.Onboarding`

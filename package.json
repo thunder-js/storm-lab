@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"start2": "node node_modules/react-native/local-cli/cli.js start --config ../../../../rn-cli.config.js",
 		"test": "jest"
 	},
 	"dependencies": {
@@ -14,9 +15,15 @@
 		"react-apollo": "^2.0.1",
 		"react-native": "0.50.3",
 		"react-native-fbsdk": "^0.6.3",
+		"react-native-navigation": "^1.1.275",
 		"recompose": "^0.26.0",
-		"styled-components": "^2.2.3",
-		"thunder-onboarding": "0.0.4"
+		"redux": "^3.7.2",
+		"storm-auth": "0.0.8",
+		"storm-common": "^0.0.2",
+		"storm-foundation": "^0.0.2",
+		"storm-onboarding": "^0.0.3",
+		"storm-system-components": "^0.0.2",
+		"styled-components": "^2.2.3"
 	},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",
@@ -30,8 +37,6 @@
 		"eslint-plugin-jsx-a11y": "^5.0.1",
 		"eslint-plugin-prefer-object-spread": "^1.2.1",
 		"eslint-plugin-react": "^7.0.1",
-		"babel-jest": "21.2.0",
-		"babel-preset-react-native": "4.0.0",
 		"jest": "21.2.1",
 		"react-test-renderer": "16.0.0"
 	},

@@ -3,7 +3,7 @@ import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
 import Onboarding from 'storm-onboarding/src/Onboarding'
 import Config from '../config'
 import { loadAuthScreen, loadMainScreen } from '../navigation'
-
+import { Colors } from '../resources/colors'
 
 const PAGES = [{
   text: 'Texto1',
@@ -34,7 +34,7 @@ class OnboardingScreen extends React.Component {
     return (
       <ScreenWrapper>
         <Onboarding
-          backgroundColor="tomato"
+          backgroundColor={Colors.PRIMARY}
           pages={PAGES}
           logoSource={LOGO}
           onFinish={this.handleFinishOnboarding}

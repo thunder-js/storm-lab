@@ -7,7 +7,7 @@ import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
 import withIsAuthenticated from 'storm-auth/src/hocs/graphcool/with-is-authenticated'
 import logout from 'storm-auth/src/logic/logout'
 import { loadAuthScreen, loadOnboardingScreen } from '../navigation'
-
+import { Style } from '../resources/style'
 
 class Main extends React.Component {
   static propTypes = {
@@ -15,7 +15,9 @@ class Main extends React.Component {
     client: any.isRequired,
   }
   static navigatorStyle = {
-    navBarHidden: true,
+    navBarHidden: false,
+    navBarTextColor: Style.navBarTextColor,
+    navBarBackgroundColor: Style.navBarBackgroundColor,
   }
   componentDidMount() {
     AsyncStorage.setItem('shouldGoToMain', 'YES')

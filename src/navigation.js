@@ -1,4 +1,8 @@
 import { Navigation } from 'react-native-navigation'
+import Feather from 'react-native-vector-icons/Feather'
+import { Style } from './resources/style'
+import { prepareIcons } from './load-assets'
+
 const PKG_NAME = 'br.com.tastefy'
 
 export const AUTH_SCREEN = `${PKG_NAME}.Auth`
@@ -8,21 +12,40 @@ export const WAYPOINT_SCREEN = `${PKG_NAME}.Waypoint`
 export const FIRST_TAB_SCREEN = `${PKG_NAME}.FirstTab`
 export const SECOND_TAB_SCREEN = `${PKG_NAME}.SecondTab`
 
-export const loadMainScreen = () => Navigation.startTabBasedApp({
-  tabs: [
-    {
-      label: 'One',
-      screen: FIRST_TAB_SCREEN,
-      title: 'Screen One',
+
+export const loadMainScreen = async () => {
+  const icons = await prepareIcons();
+  Navigation.startTabBasedApp({
+    tabs: [
+      {
+        label: 'Vouchers',
+        screen: FIRST_TAB_SCREEN,
+        title: 'Screen One',
+        icon: icons.award,
+      },
+      {
+        label: 'Escanear',
+        screen: SECOND_TAB_SCREEN,
+        title: 'Escanear Código',
+        icon: icons.camera,
+      },
+      {
+        label: 'Perfil',
+        screen: SECOND_TAB_SCREEN,
+        title: 'Perfil',
+        icon: icons.user,
+      },
+    ],
+    animationType: 'fade',
+    tabsStyle: {
+      tabBarButtonColor: Style.tabBarButtonColor,
+      tabBarSelectedButtonColor: Style.tabBarSelectedButtonColor,
+      tabBarBackgroundColor: Style.tabBarBackgroundColor,
+      tabBarLabelColor: Style.tabBarLabelColor,
+      tabBarSelectedLabelColor: Style.tabBarSelectedLabelColor,
     },
-    {
-      label: 'Two',
-      screen: SECOND_TAB_SCREEN,
-      title: 'Screen Two',
-    },
-  ],
-  animationType: 'fade',
-});
+  });
+}
 
 export const loadOnboardingScreen = () => Navigation.startSingleScreenApp({
   screen: {

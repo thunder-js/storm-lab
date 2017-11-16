@@ -2,6 +2,8 @@ import React from 'react';
 import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
 import Onboarding from 'storm-onboarding/src/Onboarding'
 import Config from '../config'
+import { loadAuthScreen, loadMainScreen } from '../navigation'
+
 
 const PAGES = [{
   text: 'Texto1',
@@ -34,7 +36,7 @@ class OnboardingScreen extends React.Component {
         <Onboarding
           backgroundColor="tomato"
           pages={PAGES}
-          logoSource={PAGES}
+          logoSource={LOGO}
           onFinish={this.handleFinishOnboarding}
           onSkip={this.handleFinishOnboarding}
         />
@@ -44,4 +46,4 @@ class OnboardingScreen extends React.Component {
 }
 
 
-export default Onboarding;
+export default OnboardingScreen;

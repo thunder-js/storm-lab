@@ -1,3 +1,4 @@
+import { Image } from 'react-native'
 import createApolloClient from 'storm-system-components/src/apollo'
 import createReduxStore from 'storm-system-components/src/redux-store'
 import { loadWaypoint } from './navigation'
@@ -16,6 +17,8 @@ const apolloClient = createApolloClient({
   },
 })
 
+
+Image.prefetch('https://unsplash.it/600x1200')
 const reduxStore = createReduxStore({}, rootReducer)
 
 registerScreens({ reduxStore, apolloClient })

@@ -30,7 +30,7 @@ class AuthScreen extends React.Component {
     return (
       <ScreenWrapper>
         <Auth
-          backgroundImageSource={{ uri: 'https://unsplash.it/600x1200' }}
+          backgroundImageSource={{ uri: 'https://unsplash.it/300x600' }}
           logoSource={{ uri: 'https://unsplash.it/400x400' }}
           signInContainer={<SignInFormContainer
             onSuccessEmail={() => alert('Success Email')}

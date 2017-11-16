@@ -5,15 +5,25 @@ import withIsAuthenticated from 'storm-auth/src/hocs/graphcool/with-is-authentic
 import Waypoint from 'storm-foundation/src/components/Waypoint'
 import decideNextScreen from 'storm-foundation/src/logic/decide-next-screen'
 import Config from '../config'
+import { loadMainScreen, loadOnboardingScreen } from '../navigation'
 
-export default compose(
+
+const WaypointScreen = compose(
   withShouldGoToMain,
   withFirstVisit,
   withIsAuthenticated,
   withProps({
     allowGuest: Config.allowGuest,
+    loadMainScreen,
+    loadOnboardingScreen,
   }),
   lifecycle({
     componentWillReceiveProps: decideNextScreen,
   }),
 )(Waypoint)
+
+WaypointScreen.navigatorStyle = {
+  navBarHidden: true,
+}
+
+export default WaypointScreen

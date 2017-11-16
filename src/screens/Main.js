@@ -1,12 +1,19 @@
 import React from 'react';
 import { Text, Button, AsyncStorage } from 'react-native'
+import { any, bool } from 'prop-types'
+import { compose } from 'recompose'
 import { withApollo } from 'react-apollo'
-import { loadAuthScreen, loadOnboardingScreen } from '../navigation'
 import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
 import withIsAuthenticated from 'storm-auth/src/hocs/graphcool/with-is-authenticated'
 import logout from 'storm-auth/src/logic/logout'
+import { loadAuthScreen, loadOnboardingScreen } from '../navigation'
+
 
 class Main extends React.Component {
+  static propTypes = {
+    authenticated: bool.isRequired,
+    client: any.isRequired,
+  }
   static navigatorStyle = {
     navBarHidden: true,
   }
@@ -14,7 +21,8 @@ class Main extends React.Component {
     AsyncStorage.setItem('shouldGoToMain', 'YES')
   }
 
-  handleLogout = async ()=> {
+  handleLogout = async () => {
+    const client = this.props.client
     await logout({ client })
     loadOnboardingScreen()
   }
@@ -25,20 +33,19 @@ class Main extends React.Component {
   render() {
     const {
       authenticated,
-      client,
     } = this.props
-    const button = authenticate
-    ? <Button
+    const button = authenticated
+    ? (<Button
       title={authenticated ? 'Logout' : 'Login'}
       color="#F00"
       onPress={async () => {
       }}
-    />
-    : <Button
+    />)
+    : (<Button
       title={authenticated ? 'Logout' : 'Login'}
       color="#F00"
       onPress={this.handleLogin}
-    />
+    />)
 
     return (
       <ScreenWrapper style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -49,5 +56,7 @@ class Main extends React.Component {
   }
 }
 
-
-export default withApollo(withIsAuthenticated(Main))
+export default compose(
+  withApollo,
+  withIsAuthenticated,
+)(Main)

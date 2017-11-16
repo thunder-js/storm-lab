@@ -7,6 +7,7 @@ import graphcoolSignInWithEmail from 'storm-auth/src/hocs/graphcool/sign-in-emai
 import graphcoolSignInWithFacebook from 'storm-auth/src/hocs/graphcool/sign-in-facebook'
 import graphcoolSignUp from 'storm-auth/src/hocs/graphcool/sign-up'
 import ScreenWrapper from 'storm-common/src/components/ScreenWrapper'
+import { loadMainScreen } from '../navigation'
 
 const SignInFormContainer = compose(
   graphcoolSignInWithEmail(),
@@ -33,8 +34,8 @@ class AuthScreen extends React.Component {
           backgroundImageSource={{ uri: 'https://unsplash.it/300x600' }}
           logoSource={{ uri: 'https://unsplash.it/400x400' }}
           signInContainer={<SignInFormContainer
-            onSuccessEmail={() => alert('Success Email')}
-            onSuccessFacebook={() => alert('Success Facebook')}
+            onSuccessEmail={this.handleClose}
+            onSuccessFacebook={this.handleClose}
           />
           }
           signUpContainer={<SignUpFormContainer

@@ -22,10 +22,10 @@
 		"react-native-vector-icons": "^4.4.2",
 		"recompose": "^0.26.0",
 		"redux": "^3.7.2",
-		"storm-auth": "0.0.8",
+		"storm-auth": "^0.0.8",
 		"storm-common": "^0.0.2",
 		"storm-foundation": "0.0.3",
-		"storm-onboarding": "^0.0.3",
+		"storm-onboarding": "^0.0.4",
 		"storm-system-components": "^0.0.2",
 		"styled-components": "^2.2.3",
 		"xcode": "^1.0.0"

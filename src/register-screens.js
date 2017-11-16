@@ -7,18 +7,24 @@ import {
   WAYPOINT_SCREEN,
   FIRST_TAB_SCREEN,
   SECOND_TAB_SCREEN,
+  SETTINGS_TAB_SCREEN,
 } from './navigation'
 
 import MainScreen from './screens/Main'
 import AuthScreen from './screens/Auth'
 import OnboardingScreen from './screens/Onboarding'
 import WaypointScreen from './screens/Waypoint'
+import SettingsScreen from './screens/Settings'
 
 export default ({ reduxStore, apolloClient }) => {
-  Navigation.registerComponent(ONBOARDING_SCREEN, () => OnboardingScreen, reduxStore, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(AUTH_SCREEN, () => AuthScreen, reduxStore, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(WAYPOINT_SCREEN, () => WaypointScreen, reduxStore, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(MAIN_SCREEN, () => MainScreen, reduxStore, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(FIRST_TAB_SCREEN, () => MainScreen, reduxStore, ApolloProvider, { client: apolloClient });
-  Navigation.registerComponent(SECOND_TAB_SCREEN, () => MainScreen, reduxStore, ApolloProvider, { client: apolloClient });
+  const registerWithStores = (name, clazz) => {
+    Navigation.registerComponent(name, () => clazz, reduxStore, ApolloProvider, { client: apolloClient });
+  }
+  registerWithStores(ONBOARDING_SCREEN, OnboardingScreen)
+  registerWithStores(AUTH_SCREEN, AuthScreen)
+  registerWithStores(WAYPOINT_SCREEN, WaypointScreen)
+  registerWithStores(MAIN_SCREEN, MainScreen)
+  registerWithStores(FIRST_TAB_SCREEN, MainScreen)
+  registerWithStores(SECOND_TAB_SCREEN, MainScreen)
+  registerWithStores(SETTINGS_TAB_SCREEN, SettingsScreen)
 };

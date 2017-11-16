@@ -40,8 +40,7 @@ class Main extends React.Component {
     ? (<Button
       title={authenticated ? 'Logout' : 'Login'}
       color="#F00"
-      onPress={async () => {
-      }}
+      onPress={this.handleLogout}
     />)
     : (<Button
       title={authenticated ? 'Logout' : 'Login'}
@@ -51,6 +50,10 @@ class Main extends React.Component {
 
     return (
       <ScreenWrapper style={{ alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          onPress={loadOnboardingScreen}
+          title="XXX"
+        />
         <Text>Main!</Text>
         {button}
       </ScreenWrapper>

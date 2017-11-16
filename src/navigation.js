@@ -11,16 +11,16 @@ export const MAIN_SCREEN = `${PKG_NAME}.Main`
 export const WAYPOINT_SCREEN = `${PKG_NAME}.Waypoint`
 export const FIRST_TAB_SCREEN = `${PKG_NAME}.FirstTab`
 export const SECOND_TAB_SCREEN = `${PKG_NAME}.SecondTab`
-
+export const SETTINGS_TAB_SCREEN = `${PKG_NAME}.SettingsTabScreen`
 
 export const loadMainScreen = async () => {
-  const icons = await prepareIcons();
+  const icons = await prepareIcons(); //  IMPROVE!
   Navigation.startTabBasedApp({
     tabs: [
       {
         label: 'Vouchers',
         screen: FIRST_TAB_SCREEN,
-        title: 'Screen One',
+        title: 'Vouchers',
         icon: icons.award,
       },
       {
@@ -34,6 +34,12 @@ export const loadMainScreen = async () => {
         screen: SECOND_TAB_SCREEN,
         title: 'Perfil',
         icon: icons.user,
+      },
+      {
+        label: 'Configurações',
+        screen: SETTINGS_TAB_SCREEN,
+        title: 'Configurações',
+        icon: icons.settings,
       },
     ],
     animationType: 'fade',

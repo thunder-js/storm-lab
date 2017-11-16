@@ -6,9 +6,9 @@ export const Style = {
   navBarBackgroundColor: Colors.PRIMARY,
   navBarButtonColor: Colors.WHITE,
   statusBarColor: 'light-content',
-  tabBarButtonColor: 'rgb(190, 190, 190)',
+  tabBarButtonColor: Colors.GRAY_180,
   tabBarSelectedButtonColor: Colors.PRIMARY,
-  tabBarBackgroundColor: 'rgb(247, 247, 247)',
-  tabBarLabelColor: 'rgb(190, 190, 190)',
+  tabBarBackgroundColor: Colors.GRAY_247,
+  tabBarLabelColor: Colors.GRAY_180,
   tabBarSelectedLabelColor: Colors.PRIMARY,
 }

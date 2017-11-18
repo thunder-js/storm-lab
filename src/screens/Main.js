@@ -8,6 +8,7 @@ import withIsAuthenticated from 'storm-auth/src/hocs/graphcool/with-is-authentic
 import logout from 'storm-auth/src/logic/logout'
 import { loadAuthScreen, loadOnboardingScreen } from '../navigation'
 import { Style } from '../resources/style'
+import StormStepForm from 'storm-step-form/src/components/index'
 
 class Main extends React.Component {
   static propTypes = {
@@ -54,7 +55,8 @@ class Main extends React.Component {
           onPress={loadOnboardingScreen}
           title="XXX"
         />
-        <Text>Main!</Text>
+        <StormStepForm />
+        <Text>Mainss!</Text>
         {button}
       </ScreenWrapper>
     )

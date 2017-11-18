@@ -1,17 +1,24 @@
 const path = require('path');
+const metroBundler = require('metro-bundler');
 
 const config = {
+  extraNodeModules: {
+    'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+    react: path.resolve(__dirname, 'node_modules/react'),
+  },
   getProjectRoots() {
     return [
-            // Keep your project directory.
+      // Keep your project directory.
       path.resolve(__dirname),
-            // // Include your forked package as a new root.
-      // path.resolve(__dirname, '../../storm-auth'),
-      // path.resolve(__dirname, '../../storm-common'),
-      // path.resolve(__dirname, '../../storm-foundation'),
-      // path.resolve(__dirname, '../../storm-onboarding'),
-      // path.resolve(__dirname, '../../storm-system-components'),
+      path.resolve(__dirname, '../storm-step-form'),
     ];
   },
+  getBlacklistRE() {
+    return metroBundler.createBlacklist([
+      /\/Users\/rafaelribeirocorreia\/dev\/thunder-js\/storm-step-form\/node_modules\/react-native\/.*/,
+    ]);
+  },
 }
+//
+
 module.exports = config;

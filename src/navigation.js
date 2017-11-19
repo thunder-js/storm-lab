@@ -12,6 +12,7 @@ export const WAYPOINT_SCREEN = `${PKG_NAME}.Waypoint`
 export const FIRST_TAB_SCREEN = `${PKG_NAME}.FirstTab`
 export const SECOND_TAB_SCREEN = `${PKG_NAME}.SecondTab`
 export const SETTINGS_TAB_SCREEN = `${PKG_NAME}.SettingsTabScreen`
+export const WORK_SPACE_SCREEN = `${PKG_NAME}.WorkSpace`
 
 export const loadMainScreen = async () => {
   const icons = await prepareIcons(); //  IMPROVE!
@@ -71,3 +72,9 @@ export const loadWaypoint = () => Navigation.startSingleScreenApp({
   },
   animationType: 'slide-down', // optional, add transition animation to root change: 'none', 'slide-down', 'fade'
 });
+
+export const loadWorkSpace = () => Navigation.startSingleScreenApp({
+  screen: {
+    screen: WORK_SPACE_SCREEN,
+  },
+})

@@ -8,6 +8,7 @@ import {
   FIRST_TAB_SCREEN,
   SECOND_TAB_SCREEN,
   SETTINGS_TAB_SCREEN,
+  WORK_SPACE_SCREEN,
 } from './navigation'
 
 import MainScreen from './screens/Main'
@@ -15,6 +16,7 @@ import AuthScreen from './screens/Auth'
 import OnboardingScreen from './screens/Onboarding'
 import WaypointScreen from './screens/Waypoint'
 import SettingsScreen from './screens/Settings'
+import WorkSpaceScreen from './screens/WorkSpace'
 
 export default ({ reduxStore, apolloClient }) => {
   const registerWithStores = (name, clazz) => {
@@ -27,4 +29,5 @@ export default ({ reduxStore, apolloClient }) => {
   registerWithStores(FIRST_TAB_SCREEN, MainScreen)
   registerWithStores(SECOND_TAB_SCREEN, MainScreen)
   registerWithStores(SETTINGS_TAB_SCREEN, SettingsScreen)
+  registerWithStores(WORK_SPACE_SCREEN, WorkSpaceScreen)
 };

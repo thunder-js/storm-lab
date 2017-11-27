@@ -15,6 +15,9 @@
 
 #import "RCCManager.h"
 
+#import <GooglePlaces/GooglePlaces.h>
+#import <GoogleMaps/GoogleMaps.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -30,6 +33,8 @@
   self.window.backgroundColor = [UIColor whiteColor];
   [[RCCManager sharedInstance] initBridgeWithBundleURL:jsCodeLocation launchOptions:launchOptions];
   
+	[GMSPlacesClient provideAPIKey:@"AIzaSyACptmsQ1ZXUoichD_pizycsWA1CTsgK94"];
+	[GMSServices provideAPIKey:@"AIzaSyACptmsQ1ZXUoichD_pizycsWA1CTsgK94"];
 //  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
 //                                                      moduleName:@"StormLab"
 //                                               initialProperties:nil

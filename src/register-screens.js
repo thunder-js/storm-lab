@@ -1,5 +1,8 @@
+import React from 'react'
 import { Navigation } from 'react-native-navigation';
 import { ApolloProvider } from 'react-apollo';
+import { Provider } from 'react-redux'
+
 import {
   AUTH_SCREEN,
   ONBOARDING_SCREEN,
@@ -20,8 +23,13 @@ import WorkSpaceScreen from './screens/WorkSpace'
 
 export default ({ reduxStore, apolloClient }) => {
   const registerWithStores = (name, clazz) => {
-    Navigation.registerComponent(name, () => clazz, reduxStore, ApolloProvider, { client: apolloClient });
+    Navigation.registerComponent(name, () => clazz, reduxStore, ({ children, ...props }) => (
+      <Provider {...props}>
+        <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
+      </Provider>
+    ));
   }
+
   registerWithStores(ONBOARDING_SCREEN, OnboardingScreen)
   registerWithStores(AUTH_SCREEN, AuthScreen)
   registerWithStores(WAYPOINT_SCREEN, WaypointScreen)
